@@ -195,7 +195,7 @@ start += bloc + "</svg>"
 
 
 
-with open("done.svg", "w") as file:
+with open(os.path.join(os.environ,"done.svg"), "w") as file:
   file.write(start)
 
 
