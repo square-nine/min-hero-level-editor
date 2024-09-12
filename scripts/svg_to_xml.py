@@ -112,7 +112,6 @@ for layer in layers2:
             elif propertie == "transform" and ("matrix" in value): #if it's a reflection biz
                 propertie = "flip"
                 value = True
-                print("detected")
             img_as_dict[propertie] = value
 
         #let's try to get the scale factor now
@@ -128,8 +127,6 @@ for layer in layers2:
         #check if I need to change stuff
         if "flip" in img_as_dict.keys(): #if I need to flip it
             img_as_dict["xScale"] = -img_as_dict["xScale"]
-            print("flipped!")
-        
 
         #print(img_as_dict) #debug stuff
 
@@ -141,16 +138,14 @@ for layer in layers2:
             img_as_needed_str += "0"
         img_as_needed_str += '"/>\n'
         to_write += img_as_needed_str
-        #print(img_as_needed_str)
+        
         #all done!
 
 #now that I have each layer with their images, I need to add them into a file!
 
 to_write += "</level>"
 
-
 #now to write to a file:
-
 with open("D:/xml_to_svg/done_xml.xml","w") as file:
     file.write(to_write)
 
@@ -187,15 +182,9 @@ okay let's type:
 stuff got better.
 
 So the complex formula I currently use to convert it properly in "xml_to_svg" can be summarised in the "matrix" transform as:
-> transform="matrix(-1,0,0,1,2*xPos+width,0)"
+> transform="matrix(-1,0,0,1,2*xPos,0)"
 so I will just use that to convert.
-then here, I can just check for "matrix" and if so, do the reverse. That would normally be the inverse matrix, except no since this doesn't support matricies like that. So 
-
-
-
-
-
-
+then here, I can just check for "matrix" and if so, do the reverse. That would normally be the inverse matrix, except no since this doesn't support matricies like that.
 
 
 so, if it's name is "collRect", it belongs in the bottom visual layer, so the "collisions" layer in the SVG. That might be easier to do than try and use a special "collision" sprite for all cases, and it means that we can use creative new shapes (maybe!?)
@@ -207,8 +196,4 @@ then add the collRects, roomTransitions and entryObjects
 
 since I don't want to use the "id" tag of an image, it will be based on the actual image name 
 (i.e "floorTile" places first, then etc etc.)
-
-
 """
-
-
