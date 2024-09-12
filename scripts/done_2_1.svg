@@ -388,7 +388,7 @@
        preserveAspectRatio="none"
        xlink:href="generalRoom_sideWall.png"
        id="image1-42"
-       transform="matrix(-1,0,0,1,109.37874,0) "
+       transform="rotate(0.0,54.68937,113.90312)"
        x="54.68937"
        y="113.90312"
  /><image
@@ -397,7 +397,7 @@
        preserveAspectRatio="none"
        xlink:href="generalRoom_sideWall.png"
        id="image1-43"
-       transform="matrix(-1,0,0,1,109.37874,0) "
+       transform="rotate(0.0,54.68937,61.43625)"
        x="54.68937"
        y="61.43625"
  /><image
@@ -497,7 +497,7 @@
        preserveAspectRatio="none"
        xlink:href="generalRoom_sideTorch_electric.png"
        id="image1-54"
-       transform="matrix(-1,0,0,1,109.74916,0) "
+       transform="rotate(0.0,54.87458,166.26417)"
        x="54.87458"
        y="166.26417"
  /><image
@@ -515,7 +515,7 @@
        preserveAspectRatio="none"
        xlink:href="generalRoom_sideTorch_electric.png"
        id="image1-56"
-       transform="matrix(-1,0,0,1,112.92416,0) "
+       transform="rotate(0.0,56.46208,40.82521)"
        x="56.46208"
        y="40.82521"
  /><image
@@ -569,7 +569,7 @@
        preserveAspectRatio="none"
        xlink:href="generalRoom_sideWall_crack.png"
        id="image1-62"
-       transform="matrix(-1,0,0,1,94.98542,0) "
+       transform="rotate(0.0,47.49271,128.42875)"
        x="47.49271"
        y="128.42875"
  /><image
@@ -578,7 +578,7 @@
        preserveAspectRatio="none"
        xlink:href="generalRoom_sideTorch_electric.png"
        id="image1-63"
-       transform="matrix(-1,0,0,1,109.74916,0) "
+       transform="rotate(0.0,54.87458,126.57667)"
        x="54.87458"
        y="126.57667"
  /><image
@@ -587,7 +587,7 @@
        preserveAspectRatio="none"
        xlink:href="generalRoom_sideTorch_electric.png"
        id="image1-64"
-       transform="matrix(-1,0,0,1,109.74916,0) "
+       transform="rotate(0.0,54.87458,84.24333)"
        x="54.87458"
        y="84.24333"
  /><image
@@ -614,7 +614,7 @@
        preserveAspectRatio="none"
        xlink:href="generalRoom_rocks1.png"
        id="image1-67"
-       transform="matrix(-1,0,0,1,261.14374,0) "
+       transform="rotate(0.0,130.57187,107.81771)"
        x="130.57187"
        y="107.81771"
  /><image
@@ -632,7 +632,7 @@
        preserveAspectRatio="none"
        xlink:href="generalRoom_rocks2.png"
        id="image1-69"
-       transform="matrix(-1,0,0,1,144.62124,0) "
+       transform="rotate(0.0,72.31062,176.82104)"
        x="72.31062"
        y="176.82104"
  /></g></svg>

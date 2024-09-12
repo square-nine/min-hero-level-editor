@@ -109,6 +109,10 @@ for layer in layers2:
             elif propertie == "transform" and ("rotate" in value): #if it's to rotate
                 propertie = "rotate"
                 value = value.replace(")","").split("rotate(")[1].split(",")[0]
+            elif propertie == "transform" and ("matrix" in value): #if it's a reflection biz
+                propertie = "flip"
+                value = True
+                print("detected")
             img_as_dict[propertie] = value
 
         #let's try to get the scale factor now
@@ -120,6 +124,12 @@ for layer in layers2:
         #get rid of the image dimensions - might need them to reposition images if the coords are bad
         img_as_dict.pop("width")
         img_as_dict.pop("height")
+
+        #check if I need to change stuff
+        if "flip" in img_as_dict.keys(): #if I need to flip it
+            img_as_dict["xScale"] = -img_as_dict["xScale"]
+            print("flipped!")
+        
 
         #print(img_as_dict) #debug stuff
 
@@ -141,7 +151,7 @@ to_write += "</level>"
 
 #now to write to a file:
 
-with open("done_xml.xml","w") as file:
+with open("D:/xml_to_svg/done_xml.xml","w") as file:
     file.write(to_write)
 
 #all done!
