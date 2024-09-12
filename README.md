@@ -23,7 +23,7 @@ Here is how it works:
   * "H#" -> Hallways
   * "A-G" -> Rooms in a floor
  
-* Download all of the files in `scripts`, they will be needed to convert between a useable format and the format for Min Hero
+* Download either the `Source Code (zip)` file and extract all, or the named files in [Releases](https://github.com/square-nine/min-hero-level-editor/releases).
 * Then, download all of the images in the `required_images` folder, these are the "building blocks" of the level editor, and it's adivsed to stick to them (unless you are a pro).
 * Move the `xml_to_svg.py` file and the room file from step 1 to the same folder as `required_images`
 * Run `xml_to_svg.py`. This can be done (if Python is installed) by opening the command prompt (right click option) and typing: `python xml_to_svg.py`, or you can use your preferred way to run Python files. There should be a file called `done.svg`.
@@ -92,4 +92,4 @@ To add back into the game, follow this modified guide:
 * Once all of the new files have replaced the old ones, click the "Save All" button in the top menu. Then close JPEXS
 
 ## Help
-Any questions? Contact me (square_nine) with the links in [my GitHub profile](https://github.com/square-nine) or by raising an issue here!
+I've tried my best to make this guide as easy to use and approachable as possible. If I have missed the mark, then contact me (square_nine) with the links in [my GitHub profile](https://github.com/square-nine) or by raising an issue here!
