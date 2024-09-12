@@ -64,19 +64,14 @@ layers2 = []
 for item in layers:
     layer_id = item[0] #get the layer ID
     tmp = item[1:].replace("/></g><g","").replace("\n","|").split("/><image") #split into manageable sections (newlines)
-    layers2.append(tmp[1:])
+    layers2.append(tmp)
 
 to_write = f'<level width="{round(canvas_width,2)}" height="{round(canvas_height,2)}">\n'
 
 #format these layers
 #so far this produces the errors, so take a look/rewrite.
 #NOTE THIS WORKS FOR MOST IMAGES, JUST A COUPLE WEIRD ONES
-# SO i might try to deal with it
 for layer in layers2:
-    #commented because I don't need these specifically, but are helpful declarations
-    #name = layer #layer name
-    #data = layers[layer] #images in that layer
-
     #clear up any parts that are not needed
     #dataStr = dataStr.replace("/></g></svg>","")
 
@@ -99,20 +94,26 @@ for layer in layers2:
 
         #now that img_to_use is useable, time to set the image up as a dict
         img_as_dict = {}  
+        fullSkip = False
         #for each special tag, create a key-value pair for it in the dict
         for tag in img_to_use:
-            propertie, value = tag.replace('"',"").split('=') #get a property/value pair
-            if propertie == "xlink:href": #if it's a link property
-                propertie = "spriteName"
-                curr_fileName = value #cache the file to access later
-                value = value[:-4]
-            elif propertie == "transform" and ("rotate" in value): #if it's to rotate
-                propertie = "rotate"
-                value = value.replace(")","").split("rotate(")[1].split(",")[0]
-            elif propertie == "transform" and ("matrix" in value): #if it's a reflection biz
-                propertie = "flip"
-                value = True
-            img_as_dict[propertie] = value
+            try: 
+                propertie, value = tag.replace('"',"").split('=') #get a property/value pair
+                fullSkip = False
+            except: 
+                fullSkip = True #it's probably a bad error due to invalid stuff
+            if not fullSkip:
+                if propertie == "xlink:href": #if it's a link property
+                    propertie = "spriteName"
+                    curr_fileName = value #cache the file to access later
+                    value = value[:-4]
+                elif propertie == "transform" and ("rotate" in value): #if it's         to rotate
+                    propertie = "rotate"
+                    value = value.replace(")","").split("rotate(")[1].split(",")[0]
+                elif propertie == "transform" and ("matrix" in value): #if it's         a reflection biz
+                    propertie = "flip"
+                    value = True
+                img_as_dict[propertie] = value
 
         #let's try to get the scale factor now
         img = cv2.imread(os.path.join(os.environ, curr_fileName),0)
