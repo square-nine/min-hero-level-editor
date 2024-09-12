@@ -14,13 +14,15 @@ if "recrypted" not in allXMLs:
 for item in allXMLs: #for each important file
     try:
         #open as bytes and read entire file
-        file = open(os.path.join(path_to_read,item), "rb").read()
-        #decompress the file
-        bytes = zlib.compress(file)
-        #saves the file with the name it was originally
-        decodedFile = open(os.path.join(path_to_save, item[:-4]+".bin"), "wb")
-        decodedFile.write(bytes)
-        decodedFile.close()
+        if ".xml" in item:
+            file = open(os.path.join(path_to_read,item), "rb").read()
+            #decompress the file
+            bytes = zlib.compress(file)
+            #saves the file with the name it was originally
+            decodedFile = open(os.path.join(path_to_save, item[:-4]+".bin"), "wb")
+            decodedFile.write(bytes)
+            decodedFile.close()
+        else: pass
     except: print(f"Error in {item}")
 
 
