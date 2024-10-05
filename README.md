@@ -70,6 +70,9 @@ A: There is a way for both, but it's quite extensive. For now, just use the cont
 Q: I cannot enter my level!
 A: You didn't add `roomTransitionObject` and `entryObject` triggers. See the IMPORTANT flag in phase 2.
 
+Q: What's the `XML_TO_SVG_Embed`?
+A: If you want to use the images for something else (to create a mockup etc), you can use that mode to get a standalone image that doesn't need the `required_images` folder! But, it can't be used to add it back into the game...
+
 Q: [insert other unforseen circumstance]!
 A: Let me know! Let's solve it together!
 
