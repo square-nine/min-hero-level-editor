@@ -196,7 +196,7 @@ def XML_TO_SVG(XMLFile:str, XMLname:str):
   bloc,count = CreateWriteTextFromList(1,all_images_decor,count) #decor
   start += bloc + "</svg>"
 
-  with open(os.path.join("D:/Min HEROOO/ultimate image creator/result",XMLname.replace(".xml",".svg")), "w") as file:
+  with open(XMLname.replace(".xml",".svg"), "w") as file:
     file.write(start)
 
 def XML_TO_SVG_Embed(XMLFile:str, XMLname:str):
@@ -349,8 +349,8 @@ def XML_TO_SVG_Embed(XMLFile:str, XMLname:str):
     start += bloc
     bloc,count = CreateWriteTextFromListV2(1,all_images_decor,count)
     start += bloc + "</svg>"
-  #don't really want to hard-code but it makes stuff easier
-  with open(os.path.join("D:/Min HEROOO/ultimate image creator/test_for_image",XMLname.replace(".xml",".svg")), "w") as file: 
+  #recommended to hard-code this, but it works if you don'y
+  with open(XMLname.replace(".xml",".svg"), "w") as file: 
     file.write(start)
 
 #find XML file:
