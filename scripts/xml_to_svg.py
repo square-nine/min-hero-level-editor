@@ -92,9 +92,9 @@ def CreateWriteTextFromListV2(layer, inpList:list[dict], count=1):
   return bloc, count
 
 
-#get stuff - make sure ALL images are in same folder as XML and named nicely
-os.environ = "D:/xml_to_svg"
-files = os.listdir(os.environ)
+#get stuff - make sure ALL images are in same folder as XML (and this file) and named nicely
+files = os.listdir(os.path.dirname(__file__))
+
 
 XML_FILE = None
 
@@ -152,7 +152,7 @@ def XML_TO_SVG(XMLFile:str, XMLname:str):
 
       #dictionary is done! process extra here
       #the scale factor -  get image dims
-      img = cv2.imread(os.path.join(os.environ, curr_image_as_dict["image"]),0)
+      img = cv2.imread(os.path.join(os.path.dirname(__file__), curr_image_as_dict["image"]),0)
       original_height, original_width = img.shape[:2]
       #get scaled params
       height, width = undo_scaleFactors(original_height,original_width,curr_image_as_dict["xScale"], curr_image_as_dict["yScale"])
@@ -278,7 +278,7 @@ def XML_TO_SVG_Embed(XMLFile:str, XMLname:str):
         curr_image_as_dict[propertie] = value #add the key/value pair       
 
       #the scale factor -  get image dims
-      img = cv2.imread(os.path.join(os.environ, curr_image_as_dict["image"]),0)
+      img = cv2.imread(os.path.join(os.path.dirname(__file__), curr_image_as_dict["image"]),0)
       original_height, original_width = img.shape[:2]
       #get scaled params
       height, width = undo_scaleFactors(original_height,original_width,curr_image_as_dict["xScale"], curr_image_as_dict["yScale"])
@@ -353,11 +353,14 @@ def XML_TO_SVG_Embed(XMLFile:str, XMLname:str):
   with open(XMLname.replace(".xml",".svg"), "w") as file: 
     file.write(start)
 
-#find XML file:
+#find XML file: only needed if standalone
+'''
 for item in files:
   if item.endswith(".xml"):
-    with open(os.path.join(os.environ,item),"r") as file:
+    with open(os.path.join(os.path.dirname(__file__),item),"r") as file:
       XML_FILE = file.readlines()
       name = item
 
 XML_TO_SVG(XML_FILE,name) #change to XML_TO_SVG_Embed for alternate mode
+
+'''
