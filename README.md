@@ -57,6 +57,9 @@ Now you have your edited level, it's time to add it back! (This assumes only 1 l
 * Click the "Save All" button in the top menu, and then close JPEXS
 
 You have successfully edited a level! It's recommended to test out if it works by playing that level.
+
+Probably should mention this earlier, but I have tried to do this and have run into numerous errors. Consider adding levels at your own expense, and this will be updated when I can reliably add levels.
+
 ### Quick FAQ
 Q: There's no music in my level!
 A: Music is automatically added from floor tiles. Try using `[elementRoom]_groundTile.png` instead of one of the variants.
