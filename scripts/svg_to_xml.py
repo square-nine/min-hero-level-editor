@@ -17,6 +17,7 @@ def get_scaleFactors(original_height, original_width, observed_height, observed_
     return xScale, yScale
     
 #get stuff
+os.path.dirname(__file__)
 files = os.listdir(os.environ)
 
 #constants

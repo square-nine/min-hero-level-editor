@@ -1,5 +1,5 @@
-#what better way to test my code than trying to reverse-engineer an XML to an SVG?
-#this might be too nuts, but would be AMAZINGG
+#Converts XML to SVG with/without embedding
+#probably over-engineered but ah well
 
 #imports
 from PIL import Image
